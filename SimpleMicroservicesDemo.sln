@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crosscut", "Crosscut\Crossc
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8A563157-4A0B-4ADE-9983-712EEB137713}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GatewayAPI", "GatewayAPI", "{2386F9F7-835D-404C-A0C4-CAC21281FD55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,5 +116,8 @@ Global
 		{EA6CDBC8-77BA-4D08-AB01-1C79E62FD116} = {C4613704-A59D-41BB-8A77-3D5531E1EE1D}
 		{DCDED0E1-33E0-41DA-95B2-246F36C4F0E1} = {C4613704-A59D-41BB-8A77-3D5531E1EE1D}
 		{24B49361-2B06-4E60-A7A4-B819E3ED6461} = {C4613704-A59D-41BB-8A77-3D5531E1EE1D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87E97718-8C09-4B1B-BB89-E8C07A1D7F02}
 	EndGlobalSection
 EndGlobal

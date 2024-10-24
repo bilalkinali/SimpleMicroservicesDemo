@@ -14,6 +14,7 @@ public class OrderRepository : IOrderRepository
 
     void IOrderRepository.Add(Order order)
     {
+        _db.Orders.Add(order);
         _db.SaveChanges();
     }
 }

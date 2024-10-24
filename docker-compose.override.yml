@@ -3,17 +3,17 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - ASPNETCORE_HTTPS_PORTS=8081
+      #- ASPNETCORE_HTTPS_PORTS=8081
       #- ASPNETCORE_Kestrel__Certificates__Default__Password=certpassword
       #- ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
       - ConnectionStrings__OrderDbConnection=Server=mssql;Database=OrderDb;User=sa;Password=YourPassword1234;MultipleActiveResultSets=true;TrustServerCertificate=true
       - ExternalServices__Customer__Uri=http://customerservice.api:8080
     ports:
       - "28080:8080"
-      - "28081:8081"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      #- "28081:8081"
+    #volumes:
+      #- ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      #- ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
     depends_on:
       - mssql
 
@@ -21,16 +21,16 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - ASPNETCORE_HTTPS_PORTS=8081
+      #- ASPNETCORE_HTTPS_PORTS=8081
       #- ASPNETCORE_Kestrel__Certificates__Default__Password=certpassword
       #- ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
       - ConnectionStrings__CustomerDbConnection=Server=mssql;Database=CustomerDb;User=sa;Password=YourPassword1234;MultipleActiveResultSets=true;TrustServerCertificate=true
     ports:
       - "18080:8080"
-      - "18081:8081"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      #- "18081:8081"
+    #volumes:
+      #- ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      #- ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
     depends_on:
       - mssql
 
@@ -43,6 +43,18 @@ services:
       - 11433:1433 
     volumes:
       - db:/var/opt/mssql
+
+  gateway.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      #- ASPNETCORE_HTTPS_PORTS=8081
+    ports:
+      - "38080:8080"
+      #- "38081:8081"
+    #volumes:
+      #- ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      #- ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
 
 volumes:
   db:    
